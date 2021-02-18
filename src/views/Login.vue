@@ -39,7 +39,6 @@ export default {
       var url = this.$store.state.globalSettings.apiUrl
       +`/admin/login/${this.formData.aname}/${this.formData.apwd}`;
       this.$axios.get(url).then((result)=>{
-        console.log(result);
         if(result.data.code == 200){ //登陆成功
           //把用户名存入Vuex存储仓库
           this.$store.commit('setAdminName',this.formData.aname);
